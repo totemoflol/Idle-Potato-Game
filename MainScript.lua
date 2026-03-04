@@ -38,36 +38,18 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
--- Tab
-local Tab = Window:CreateTab("Idk", 4483362458) -- Title, Image
--- Auto Sell Section
-local Section = Tab:CreateSection("Sell")
-local Toggle = Tab:CreateToggle({
-   Name = "Toggle Example",
-   CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-    local Input = Tab:CreateInput({
-       Name = "Amount",
-       CurrentValue = "",
-       PlaceholderText = "Amount Of Gold Potatoes",
-       RemoveTextAfterFocusLost = false,
-       Flag = "Input1",
-       Callback = function(Sell1)  -- 'Sell1' here is the text the user typed
-            local amount = tonumber(Sell1)  -- convert string to number
-            if amount then
-                local args = {amount}
-                game:GetService("ReplicatedStorage")
-                    :WaitForChild("Remotes")
-                    :WaitForChild("SellGoldenPotatoes")
-                    :FireServer(unpack(args))
-            else
-                warn("Please enter a valid number!")
-            end
-       end,
-    })
-    end,
-})        
+-- Auto Sell Tab
+local Tab = Window:CreateTab("Sell", 4483362458) -- Title, Image
+local Input = Tab:CreateInput({
+   Name = "Amount",
+   CurrentValue = "",
+   PlaceholderText = "Amount Of Gold Potatoes",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input1",
+   Callback = function(Sell1)
+   -- The function that takes place when the input is changed
+   -- The variable (Text) is a string for the value in the text box
+   end,
+})
+     
 
