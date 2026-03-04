@@ -38,7 +38,7 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
--- Auto Sell Tab
+-- Auto Sell Section
 local Tab = Window:CreateTab("Sell", 4483362458) -- Title, Image
 local Input = Tab:CreateInput({
    Name = "Amount",
