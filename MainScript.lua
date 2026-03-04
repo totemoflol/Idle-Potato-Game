@@ -40,3 +40,4 @@ local Window = Rayfield:CreateWindow({
 
 -- Auto Sell Tab
 local Tab = Window:CreateTab("Sell", "banknoteArrowUp") -- Title, Image
+local Section = Tab:CreateSection("AutoSell")
