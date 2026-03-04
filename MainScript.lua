@@ -1,5 +1,4 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-
 -- Window
 local Window = Rayfield:CreateWindow({
    Name = "Potato Script",
