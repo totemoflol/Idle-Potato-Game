@@ -39,16 +39,24 @@ local Window = Rayfield:CreateWindow({
 })
 
 -- Auto Sell Section
-local Tab = Window:CreateTab("Sell", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("Sell")
 local Input = Tab:CreateInput({
    Name = "Amount",
    CurrentValue = "",
    PlaceholderText = "Amount Of Gold Potatoes",
    RemoveTextAfterFocusLost = false,
    Flag = "Input1",
-   Callback = function(Sell1)
-   -- The function that takes place when the input is changed
-   -- The variable (Text) is a string for the value in the text box
+   Callback = function(Sell1)  -- 'Sell1' here is the text the user typed
+        local amount = tonumber(Sell1)  -- convert string to number
+        if amount then
+            local args = {amount}
+            game:GetService("ReplicatedStorage")
+                :WaitForChild("Remotes")
+                :WaitForChild("SellGoldenPotatoes")
+                :FireServer(unpack(args))
+        else
+            warn("Please enter a valid number!")
+        end
    end,
 })
 
