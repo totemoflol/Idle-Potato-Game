@@ -26,7 +26,7 @@ local Window = Rayfield:CreateWindow({
       RememberJoins = true -- Set this to false to make them join the Discord every time they load it up
    },
 
-   KeySystem = true, -- Set this to true to use our key system
+   KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
       Title = "Key Up You Bot",
       Subtitle = "Key System",
@@ -39,7 +39,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 -- Auto Sell Tab
-local Tab = MainWindow:CreateTab("Sell", "banknoteArrowUp") -- Title, Image
+local Tab = Window:CreateTab("Sell", 4483362458) -- Title, Image
 local Input = Tab:CreateInput({
    Name = "Amount",
    CurrentValue = "",
