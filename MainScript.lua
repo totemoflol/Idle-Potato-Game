@@ -51,5 +51,28 @@ local Input = Tab:CreateInput({
    -- The variable (Text) is a string for the value in the text box
    end,
 })
+local Toggle = Tab:CreateToggle({
+   Name = "Toggle Example",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+
+      running = Value
+
+      if running then
+         coroutine.wrap(function()
+            while running do
+               game:GetService("ReplicatedStorage")
+                  :WaitForChild("Remotes")
+                  :WaitForChild("SellGoldenPotatoes")
+                  :FireServer(tonumber(Sell1))
+
+               task.wait(delayTime)
+            end
+         end)()
+      end
+
+   end,
+})
      
 
