@@ -38,3 +38,6 @@ local Window = Rayfield:CreateWindow({
       Key = {"TTT", "ttt"} -- List of keys that the system will accept, can be RAW file links (pastebin, github, etc.) or simple strings ("hello", "key22")
    }
 })
+
+-- Auto Sell Tab
+local Tab = Window:CreateTab("Sell", "banknoteArrowUp") -- Title, Image
