@@ -55,11 +55,7 @@ local Toggle = Tab:CreateToggle({
    Name = "Toggle Example",
    CurrentValue = false,
    Flag = "Toggle1",
-   Callback = function(Value)
-
-      running = Value
-
-          while running do               
+   Callback = function(Value)       
             local args = {
     Sell1
 }
