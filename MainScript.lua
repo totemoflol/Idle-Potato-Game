@@ -62,11 +62,10 @@ local Toggle = Tab:CreateToggle({
       if running then
          coroutine.wrap(function()
             while running do
-               game:GetService("ReplicatedStorage")
-                  :WaitForChild("Remotes")
-                  :WaitForChild("SellGoldenPotatoes")
-                  :FireServer(tonumber(Sell1))
-
+               local args = {
+    Sell1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(unpack(args))
                task.wait(1)
             end
          end)()
