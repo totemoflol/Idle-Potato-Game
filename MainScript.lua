@@ -67,7 +67,7 @@ local Toggle = Tab:CreateToggle({
                   :WaitForChild("SellGoldenPotatoes")
                   :FireServer(tonumber(Sell1))
 
-               task.wait(delayTime)
+               task.wait(1)
             end
          end)()
       end
