@@ -15,7 +15,7 @@ local Window = Rayfield:CreateWindow({
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = Tato Script, -- Create a custom folder for your hub/game
+      FolderName = "Tato Script", -- Create a custom folder for your hub/game
       FileName = "Tato Hub"
    },
 
