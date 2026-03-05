@@ -159,3 +159,4 @@ local AutoPrestigeToggle = RebirthTab:CreateToggle({
 })
 
 
+Rayfield:LoadConfiguration()
