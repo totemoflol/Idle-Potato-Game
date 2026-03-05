@@ -38,13 +38,13 @@ local Window = Rayfield:CreateWindow({
 })
 
 -- Auto Sell Tab
-local SellTab = Window:CreateTab("Sell", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Sell", 4483362458) -- Title, Image
 -- VARIABLES
 local Amount = 1
 local Delay = 1
 local Running = false
 -- INPUT: Amount Of Gold Potatoes
-local AmountInput = SellTab:CreateInput({
+local AmountInput = Tab:CreateInput({
    Name = "Amount Of Gold Potatoes",
    CurrentValue = "",
    PlaceholderText = "Enter Amount",
@@ -55,7 +55,7 @@ local AmountInput = SellTab:CreateInput({
    end,
 })
 -- INPUT: Delay
-local DelayInput = SellTab:CreateInput({
+local DelayInput = Tab:CreateInput({
    Name = "Delay (seconds)",
    CurrentValue = "",
    PlaceholderText = "Enter Delay",
@@ -66,7 +66,7 @@ local DelayInput = SellTab:CreateInput({
    end,
 })
 -- TOGGLE: Auto Sell
-local AutoSellToggle = SellTab:CreateToggle({
+local AutoSellToggle = Tab:CreateToggle({
    Name = "Auto Sell",
    CurrentValue = false,
    Flag = "AutoSellToggle",
@@ -88,12 +88,13 @@ local AutoSellToggle = SellTab:CreateToggle({
    end,
 })
 
+local Section = Tab:CreateSection("Section Example")
 
 -- Auto Tab
-local AutoTab = Window:CreateTab("Auto", "circuit-board") -- Title, Image
+local Tab = Window:CreateTab("Auto", "circuit-board") -- Title, Image
 -- Auto Click
 local Clicking = false
-local AutoClickToggle = AutoTab:CreateToggle({
+local AutoClickToggle = Tab:CreateToggle({
     Name = "Auto Click (0.02s)",
     CurrentValue = false,
     Flag = "AutoClickToggle",
