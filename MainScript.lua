@@ -44,7 +44,7 @@ local Amount = 1
 local Delay = 1
 local Running = false
 -- INPUT: Amount Of Gold Potatoes
-local AmountInput = Tab:CreateInput({
+local AmountInput = SellTab:CreateInput({
    Name = "Amount Of Gold Potatoes",
    CurrentValue = "",
    PlaceholderText = "Enter Amount",
@@ -55,7 +55,7 @@ local AmountInput = Tab:CreateInput({
    end,
 })
 -- INPUT: Delay
-local DelayInput = Tab:CreateInput({
+local DelayInput = SellTab:CreateInput({
    Name = "Delay (seconds)",
    CurrentValue = "",
    PlaceholderText = "Enter Delay",
@@ -66,7 +66,7 @@ local DelayInput = Tab:CreateInput({
    end,
 })
 -- TOGGLE: Auto Sell
-local AutoSellToggle = Tab:CreateToggle({
+local AutoSellToggle = SellTab:CreateToggle({
    Name = "Auto Sell",
    CurrentValue = false,
    Flag = "AutoSellToggle",
@@ -93,7 +93,7 @@ local AutoSellToggle = Tab:CreateToggle({
 local AutoTab = Window:CreateTab("Auto", "circuit-board") -- Title, Image
 -- Auto Click
 local Clicking = false
-local AutoClickToggle = Tab:CreateToggle({
+local AutoClickToggle = AutoTab:CreateToggle({
     Name = "Auto Click (0.02s)",
     CurrentValue = false,
     Flag = "AutoClickToggle",
