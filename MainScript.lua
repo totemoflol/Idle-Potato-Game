@@ -1,10 +1,11 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+-- Window
 local Window = Rayfield:CreateWindow({
    Name = "Potato Script",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
-   ShowText = "Tato", -- for mobile users to unhide Rayfield, change if you'd like
+   ShowText = "Rayfield", -- for mobile users to unhide Rayfield, change if you'd like
    Theme = "AmberGlow", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
@@ -14,7 +15,7 @@ local Window = Rayfield:CreateWindow({
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = idk, -- Create a custom folder for your hub/game
+      FolderName = nil, -- Create a custom folder for your hub/game
       FileName = "Big Hub"
    },
 
@@ -49,19 +50,7 @@ local Input = Tab:CreateInput({
    -- The variable (Text) is a string for the value in the text box
    end,
 })
-local Toggle = Tab:CreateToggle({
-   Name = "Toggle Example",
-   CurrentValue = false,
-   Flag = "Toggle1",
-   Callback = function(Value)       
-            local args = {
-    Sell1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(unpack(args))
-               task.wait(1)
-         end
-      end)
-   end,
-})
+     
+
      
 
