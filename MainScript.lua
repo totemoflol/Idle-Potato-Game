@@ -39,15 +39,52 @@ local Window = Rayfield:CreateWindow({
 
 -- Auto Sell Tab
 local Tab = Window:CreateTab("Sell", 4483362458) -- Title, Image
-local Input = Tab:CreateInput({
-   Name = "Amount",
+-- VARIABLES
+local Amount = 1
+local Delay = 1
+local Running = false
+-- INPUT: Amount Of Gold Potatoes
+local AmountInput = Tab:CreateInput({
+   Name = "Amount Of Gold Potatoes",
    CurrentValue = "",
-   PlaceholderText = "Amount Of Gold Potatoes",
+   PlaceholderText = "Enter Amount",
    RemoveTextAfterFocusLost = false,
-   Flag = "Input1",
-   Callback = function(Sell1)
-   -- The function that takes place when the input is changed
-   -- The variable (Text) is a string for the value in the text box
+   Flag = "AmountInput",
+   Callback = function(Value)
+      Amount = tonumber(Value) or 0
+   end,
+})
+-- INPUT: Delay
+local DelayInput = Tab:CreateInput({
+   Name = "Delay (seconds)",
+   CurrentValue = "",
+   PlaceholderText = "Enter Delay",
+   RemoveTextAfterFocusLost = false,
+   Flag = "DelayInput",
+   Callback = function(Value)
+      Delay = tonumber(Value) or 0
+   end,
+})
+-- TOGGLE: Auto Sell
+local AutoSellToggle = Tab:CreateToggle({
+   Name = "Auto Sell",
+   CurrentValue = false,
+   Flag = "AutoSellToggle",
+   Callback = function(Value)
+      Running = Value
+
+      while Running do
+         local args = {
+            Amount
+         }
+
+         game:GetService("ReplicatedStorage")
+            :WaitForChild("Remotes")
+            :WaitForChild("SellGoldenPotatoes")
+            :FireServer(unpack(args))
+
+         task.wait(Delay)
+      end
    end,
 })
      
