@@ -158,5 +158,25 @@ local AutoPrestigeToggle = RebirthTab:CreateToggle({
     end,
 })
 
+-- Anti-AFK (runs instantly when script runs)
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+if getconnections then
+    for _, connection in pairs(getconnections(player.Idled)) do
+        if connection.Disable then
+            connection:Disable()
+        elseif connection.Disconnect then
+            connection:Disconnect()
+        end
+    end
+else
+    player.Idled:Connect(function()
+        game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+        task.wait(1)
+        game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+    end)
+end
 
 Rayfield:LoadConfiguration()
