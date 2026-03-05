@@ -115,7 +115,7 @@ local AutoClickToggle = AutoTab:CreateToggle({
 })
 
  -- Rebirth Tab    
-local RebirthTab = Window:CreateTab("Rebirths", "banknote-arrow-up") -- Title, Image
+local RebirthTab = Window:CreateTab("Rebirths", nil) -- Title, Image
 local PrestigeSection = RebirthTab:CreateSection("Prestiges")
 
 
