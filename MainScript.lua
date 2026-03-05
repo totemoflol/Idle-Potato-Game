@@ -90,7 +90,7 @@ local AutoSellToggle = Tab:CreateToggle({
 
 
 -- Auto Tab
-local AutoTab = Window:CreateTab("Auto", "circuitBoard") -- Title, Image
+local AutoTab = Window:CreateTab("Auto", "circuit-board") -- Title, Image
 -- Auto Click
 local Clicking = false
 local AutoClickToggle = Tab:CreateToggle({
