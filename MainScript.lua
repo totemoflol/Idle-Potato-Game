@@ -115,9 +115,9 @@ local AutoClickToggle = AutoTab:CreateToggle({
 })
 
  -- Rebirth Tab    
-local RebirthsTab = Window:CreateTab("Rebirths", "aperture") -- Title, Image
-local PrestigeSection = RebirthsTab:CreateSection("Ascension")
-local AscendToggle = RebirthsTab:CreateToggle({
+local RebirthTab = Window:CreateTab("Rebirths", "aperture") -- Title, Image
+local PrestigeSection = RebirthTab:CreateSection("Ascension")
+local AscendToggle = RebirthTab:CreateToggle({
     Name = "Abundance Ascension",
     CurrentValue = false,
     Flag = "AutoAscend",
@@ -135,8 +135,8 @@ local AscendToggle = RebirthsTab:CreateToggle({
     end,
 })
 
-local Divider = RebirthsTab:CreateDivider()
-local PrestigeSection = RebirthsTab:CreateSection("Prestige")
+local Divider = RebirthTab:CreateDivider()
+local PrestigeSection = RebirthTab:CreateSection("Prestige")
 local Prestiging = false
 local AutoPrestigeToggle = RebirthTab:CreateToggle({
     Name = "Auto Prestige (32s)",
