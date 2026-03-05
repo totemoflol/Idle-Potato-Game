@@ -115,7 +115,24 @@ local AutoClickToggle = AutoTab:CreateToggle({
 })
 
  -- Rebirth Tab    
-local RebirthTab = Window:CreateTab("Rebirths", nil) -- Title, Image
+local RebirthTab = Window:CreateTab("Rebirths", "aperture") -- Title, Image
 local PrestigeSection = RebirthTab:CreateSection("Prestiges")
+local AscendToggle = RebirthTab:CreateToggle({
+    Name = "Auto Ascend",
+    CurrentValue = false,
+    Flag = "AutoAscend",
+    Callback = function(Value)
+        local running = Value
+        spawn(function()
+            while running do
+                local args = {
+                    "abundance"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformAscension"):FireServer(unpack(args))
+                task.wait(60) -- waits 60 seconds (1 minute)
+            end
+        end)
+    end,
+})
 
 
