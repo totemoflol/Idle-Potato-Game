@@ -114,7 +114,7 @@ local AutoClickToggle = Tab:CreateToggle({
     end,
 })
 
-local Section = Tab:CreateSection("Section Example")
+local 1Section = Tab:CreateSection("Section Example")
 
  -- Rebirth Tab    
 local Tab = Window:CreateTab("Rebirths", "banknote-arrow-up") -- Title, Image
