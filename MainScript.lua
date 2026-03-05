@@ -87,7 +87,32 @@ local AutoSellToggle = Tab:CreateToggle({
       end
    end,
 })
-     
+
+
+-- Auto Tab
+local Tab = Window:CreateTab("Auto", "circuitBoard") -- Title, Image
+-- Auto Click
+local Clicking = false
+local AutoClickToggle = Tab:CreateToggle({
+    Name = "Auto Click (0.02s)",
+    CurrentValue = false,
+    Flag = "AutoClickToggle",
+    Callback = function(Value)
+        Clicking = Value
+
+        task.spawn(function()
+            while Clicking do
+                game:GetService("ReplicatedStorage")
+                    :WaitForChild("Remotes")
+                    :WaitForChild("PerformClick")
+                    :FireServer()
+
+                task.wait(0.02)
+            end
+        end)
+    end,
+})
+
 
      
 
