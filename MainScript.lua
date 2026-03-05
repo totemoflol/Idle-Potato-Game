@@ -5,7 +5,7 @@ local Window = Rayfield:CreateWindow({
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
-   ShowText = "Rayfield", -- for mobile users to unhide Rayfield, change if you'd like
+   ShowText = "Tato", -- for mobile users to unhide Rayfield, change if you'd like
    Theme = "AmberGlow", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
@@ -38,7 +38,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 -- Auto Sell Tab
-local Tab = Window:CreateTab("Sell", 4483362458) -- Title, Image
+local SellTab = Window:CreateTab("Sell", 4483362458) -- Title, Image
 -- VARIABLES
 local Amount = 1
 local Delay = 1
@@ -88,8 +88,9 @@ local AutoSellToggle = Tab:CreateToggle({
    end,
 })
 
+
 -- Auto Tab
-local Tab = Window:CreateTab("Auto", "circuitBoard") -- Title, Image
+local AutoTab = Window:CreateTab("Auto", "circuitBoard") -- Title, Image
 -- Auto Click
 local Clicking = false
 local AutoClickToggle = Tab:CreateToggle({
