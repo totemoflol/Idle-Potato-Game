@@ -105,7 +105,7 @@ local SellAllToggle = SellTab:CreateToggle({
             local goldLabel = gui.GoldenRow.GoldenCount
             local r = game:GetService("ReplicatedStorage").Remotes
 
-            while running do
+            while selling do
                 local gold = tonumber(goldLabel.Text) or 0
                 if gold > 0 then
                     r.SellGoldenPotatoes:FireServer(gold)
