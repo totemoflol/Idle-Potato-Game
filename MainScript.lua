@@ -92,27 +92,44 @@ local Section = SellTab:CreateSection("Section Example")
 
 local selling = false
 
+-- Function to parse gold numbers like "1.234M" or "12.345B"
+local function parseGold(text)
+    local num = tonumber(string.match(text, "%d+%.?%d*")) or 0
+    if string.find(text, "B") then
+        return num * 1e9
+    elseif string.find(text, "M") then
+        return num * 1e6
+    else
+        return num
+    end
+end
+
+-- Persistent loop
+task.spawn(function()
+    local player = game:GetService("Players").LocalPlayer
+    local gui = player.PlayerGui:WaitForChild("PotatoGameGUI")
+        .Background.ClickerArea.ClickerContainer.CurrencyFrame
+    local goldLabel = gui:WaitForChild("GoldenRow"):WaitForChild("GoldenCount")
+    local r = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
+
+    while true do
+        if selling then
+            local gold = parseGold(goldLabel.Text)
+            if gold > 0 then
+                r.SellGoldenPotatoes:FireServer(gold)
+            end
+        end
+        task.wait(0.1)
+    end
+end)
+
+-- Toggle
 local SellAllToggle = SellTab:CreateToggle({
     Name = "Auto Sell Golden Potatoes",
     CurrentValue = false,
     Flag = "AutoSellGolden",
-    Callback = function(SellAll)
-        selling = SellAll
-
-        task.spawn(function()
-            local player = game:GetService("Players").LocalPlayer
-            local gui = player.PlayerGui.PotatoGameGUI.Background.ClickerArea.ClickerContainer.CurrencyFrame
-            local goldLabel = gui.GoldenRow.GoldenCount
-            local r = game:GetService("ReplicatedStorage").Remotes
-
-            while selling do
-                local gold = tonumber(goldLabel.Text) or 0
-                if gold > 0 then
-                    r.SellGoldenPotatoes:FireServer(gold)
-                end
-                task.wait(0.1)
-            end
-        end)
+    Callback = function(state)
+        selling = state
     end,
 })
 
