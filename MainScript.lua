@@ -238,6 +238,62 @@ end
 --Macro Tab
 local MacroTab = Window:CreateTab("Macro", nil) -- Title, Image
 local Section = MacroTab:CreateSection("Prestige Macro 15-30")
+local macroing = false
+local Toggle = Tab:CreateToggle({
+   Name = "Auto Prestige Cycle",
+   CurrentValue = false,
+   Flag = "AutoPrestige",
+   Callback = function(MacroV1)
+      macroing = MacroV1
 
+      while macroing do
+
+         -- Prestige
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformPrestige"):FireServer()
+         task.wait(4)
+
+         -- Sell
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(476068.35755462974)
+         task.wait(0.5)
+
+         -- Grandfather Wisdom
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
+         task.wait(0.5)
+
+         -- Sell
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(476068.35755462974)
+         task.wait(1)
+
+         -- Grandfather Wisdom
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
+         task.wait(2)
+
+         -- Infinite Energy
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
+         task.wait(1)
+
+         -- Sell + Infinite Energy
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(476068.35755462974)
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
+         task.wait(4)
+
+         -- Sell + Infinite Energy
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(476068.35755462974)
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
+         task.wait(3)
+
+         -- Sell + Omni
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(476068.35755462974)
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
+         task.wait(4)
+
+         -- Sell + Omni
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(476068.35755462974)
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
+         task.wait(1)
+
+      end
+   end,
+})
 
 Rayfield:LoadConfiguration()
