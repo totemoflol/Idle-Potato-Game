@@ -180,7 +180,9 @@ else
 end
 
 --Macro Tab
-local MacroTab = Window:CreateTab("Macro", 4483362458) -- Title, Image
+local MacroTab = Window:CreateTab("Macro", "drone") -- Title, Image
+local Section = Tab:CreateSection("Prestige Macro 15-30")
+
 
 
 Rayfield:LoadConfiguration()
