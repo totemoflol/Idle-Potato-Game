@@ -182,7 +182,94 @@ end
 --Macro Tab
 local MacroTab = Window:CreateTab("Macro", "drone") -- Title, Image
 local Section = Tab:CreateSection("Prestige Macro 15-30")
+local running = false
 
+local Toggle = Tab:CreateToggle({
+   Name = "Auto Prestige Farm",
+   CurrentValue = false,
+   Flag = "AutoPrestigeFarm",
+   Callback = function(Value)
+      running = Value
+
+      local function parseCash(text)
+         local num = tonumber(string.match(text,"%d+%.?%d*"))
+         if string.find(text,"B") then
+            return num * 1000000000
+         elseif string.find(text,"M") then
+            return num * 1000000
+         else
+            return num
+         end
+      end
+
+      task.spawn(function()
+
+         local player = game:GetService("Players").LocalPlayer
+         local gui = player.PlayerGui.PotatoGameGUI.Background.ClickerArea.ClickerContainer.CurrencyFrame
+
+         local goldLabel = gui.GoldenRow.GoldenCount
+         local cashLabel = gui.CashRow.CashCount
+
+         local r = game:GetService("ReplicatedStorage").Remotes
+
+         local bought1,bought2,bought3,bought4,bought5,bought6
+
+         while running do
+
+            bought1,bought2,bought3,bought4,bought5,bought6 = false,false,false,false,false,false
+            local startTime = tick()
+
+            while running and (tick() - startTime) < 32 do
+
+               local gold = tonumber(goldLabel.Text) or 0
+               local cash = parseCash(cashLabel.Text)
+
+               if gold > 0 then
+                  r.SellGoldenPotatoes:FireServer(gold)
+               end
+
+               if cash >= 2460000 and not bought1 then
+                  r.PurchaseClickUpgrade:FireServer("grandfathers_wisdom")
+                  bought1 = true
+               end
+
+               if cash >= 4288000 and not bought2 then
+                  r.PurchaseClickUpgrade:FireServer("grandfathers_wisdom")
+                  bought2 = true
+               end
+
+               if cash >= 1470000000 and not bought3 then
+                  r.PurchaseClickUpgrade:FireServer("infinite_energy")
+                  bought3 = true
+               end
+
+               if cash >= 2793000000 and not bought4 then
+                  r.PurchaseClickUpgrade:FireServer("infinite_energy")
+                  bought4 = true
+               end
+
+               if cash >= 14700000000 and not bought5 then
+                  r.PurchaseClickUpgrade:FireServer("omnipotato_blessing")
+                  bought5 = true
+               end
+
+               if cash >= 28665000000 and not bought6 then
+                  r.PurchaseClickUpgrade:FireServer("omnipotato_blessing")
+                  bought6 = true
+               end
+
+               task.wait(0.1)
+            end
+
+            if running then
+               r.PerformPrestige:FireServer()
+               task.wait(1)
+            end
+
+         end
+      end)
+   end,
+})
 
 
 Rayfield:LoadConfiguration()
