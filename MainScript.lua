@@ -245,8 +245,8 @@ local MacroV1Toggle = MacroTab:CreateToggle({
    Flag = "AutoPrestige",
    Callback = function(MacroV1)
       macroing = MacroV1
-
-      while macroing do
+      task.spawn(function()
+         while macroing do
 
          -- Prestige
          game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformPrestige"):FireServer()
