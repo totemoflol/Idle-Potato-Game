@@ -249,21 +249,28 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 
         task.spawn(function()
             while macroing do
+               -- Prestige                  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformPrestige"):FireServer()
                 task.wait(5)
-
+                  
+               -- 200K Sell
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(200000)
                 task.wait(0.5)
-
+                  
+               -- Wisdom 1
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
                 task.wait(0.5)
-
+                  
+               -- 1M Sell
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(1000000)
                 task.wait(1)
 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
                 task.wait(2)
-
+                  
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(1000000)
+                task.wait(1)
+                  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
                 task.wait(1)
 
