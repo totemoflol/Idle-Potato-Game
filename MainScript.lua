@@ -90,30 +90,6 @@ local AutoSellToggle = SellTab:CreateToggle({
 
 local Section = SellTab:CreateSection("Section Example")
 
--- Auto Tab
-local AutoTab = Window:CreateTab("Auto", "circuit-board") -- Title, Image
--- Auto Click
-local Clicking = false
-local AutoClickToggle = AutoTab:CreateToggle({
-    Name = "Auto Click (0.02s)",
-    CurrentValue = false,
-    Flag = "AutoClickToggle",
-    Callback = function(Value)
-        Clicking = Value
-
-        task.spawn(function()
-            while Clicking do
-                game:GetService("ReplicatedStorage")
-                    :WaitForChild("Remotes")
-                    :WaitForChild("PerformClick")
-                    :FireServer()
-
-                task.wait(0.02)
-            end
-        end)
-    end,
-})
-
 local selling = false
 
 local SellAllToggle = SellTab:CreateToggle({
@@ -139,6 +115,32 @@ local SellAllToggle = SellTab:CreateToggle({
         end)
     end,
 })
+
+-- Auto Tab
+local AutoTab = Window:CreateTab("Auto", "circuit-board") -- Title, Image
+-- Auto Click
+local Clicking = false
+local AutoClickToggle = AutoTab:CreateToggle({
+    Name = "Auto Click (0.02s)",
+    CurrentValue = false,
+    Flag = "AutoClickToggle",
+    Callback = function(Value)
+        Clicking = Value
+
+        task.spawn(function()
+            while Clicking do
+                game:GetService("ReplicatedStorage")
+                    :WaitForChild("Remotes")
+                    :WaitForChild("PerformClick")
+                    :FireServer()
+
+                task.wait(0.02)
+            end
+        end)
+    end,
+})
+
+
 
  -- Rebirth Tab    
 local RebirthTab = Window:CreateTab("Rebirths", "aperture") -- Title, Image
