@@ -179,4 +179,8 @@ else
     end)
 end
 
+--Macro Tab
+local MacroTab = Window:CreateTab("Macro", 4483362458) -- Title, Image
+
+
 Rayfield:LoadConfiguration()
