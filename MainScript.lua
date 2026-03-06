@@ -114,6 +114,32 @@ local AutoClickToggle = AutoTab:CreateToggle({
     end,
 })
 
+local selling = false
+
+local SellAllToggle = SellTab:CreateToggle({
+    Name = "Auto Sell Golden Potatoes",
+    CurrentValue = false,
+    Flag = "AutoSellGolden",
+    Callback = function(SellAll)
+        selling = SellAll
+
+        task.spawn(function()
+            local player = game:GetService("Players").LocalPlayer
+            local gui = player.PlayerGui.PotatoGameGUI.Background.ClickerArea.ClickerContainer.CurrencyFrame
+            local goldLabel = gui.GoldenRow.GoldenCount
+            local r = game:GetService("ReplicatedStorage").Remotes
+
+            while running do
+                local gold = tonumber(goldLabel.Text) or 0
+                if gold > 0 then
+                    r.SellGoldenPotatoes:FireServer(gold)
+                end
+                task.wait(0.1)
+            end
+        end)
+    end,
+})
+
  -- Rebirth Tab    
 local RebirthTab = Window:CreateTab("Rebirths", "aperture") -- Title, Image
 local PrestigeSection = RebirthTab:CreateSection("Ascension")
