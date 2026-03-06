@@ -250,7 +250,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
         task.spawn(function()
             while macroing do
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformPrestige"):FireServer()
-                task.wait(4)
+                task.wait(5)
 
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(300000)
                 task.wait(0.5)
