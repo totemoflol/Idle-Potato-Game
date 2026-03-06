@@ -241,7 +241,7 @@ local Section = MacroTab:CreateSection("Prestige Macro 15-30")
 local macroing = false
 
 local MacroV1Toggle = MacroTab:CreateToggle({
-    Name = "Auto Prestige Cycle",
+    Name = "Macro",
     CurrentValue = false,
     Flag = "AutoPrestige",
     Callback = function(MacroV1)
