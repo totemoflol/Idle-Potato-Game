@@ -182,10 +182,7 @@ end
 --Macro Tab
 local MacroTab = Window:CreateTab("Macro", nil) -- Title, Image
 local Section = MacroTab:CreateSection("Prestige Macro 15-30")
-local MacroTab = Window:CreateTab("Macro", "drone") -- Title, Image
-local Section = MacroTab:CreateSection("Prestige Macro 15-30")
 local running = false
-
 local Toggle = MacroTab:CreateToggle({
     Name = "Auto Prestige Farm",
     CurrentValue = false,
