@@ -239,7 +239,7 @@ end
 local MacroTab = Window:CreateTab("Macro", nil) -- Title, Image
 local Section = MacroTab:CreateSection("Prestige Macro 15-30")
 local macroing = false
-local Toggle = Tab:CreateToggle({
+local MacroV1Toggle = MacroTab:CreateToggle({
    Name = "Auto Prestige Cycle",
    CurrentValue = false,
    Flag = "AutoPrestige",
