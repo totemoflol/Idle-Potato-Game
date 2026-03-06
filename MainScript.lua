@@ -187,10 +187,10 @@ local Toggle = MacroTab:CreateToggle({
     Name = "Auto Prestige Farm",
     CurrentValue = false,
     Flag = "AutoPrestigeFarm",
-    Callback = function(Value)
-        running = Value
+    Callback = function(Macro)
+        running = Macro
 
-        local function parseCash(text)
+        local function parseCash(Cash)
             local num = tonumber(string.match(text,"%d+%.?%d*"))
             if string.find(text,"B") then
                 return num * 1000000000
