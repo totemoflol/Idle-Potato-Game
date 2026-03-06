@@ -223,35 +223,35 @@ local Toggle = MacroTab:CreateToggle({
                     end
 
                     -- Refresh cash after selling
-                    local cash = parseCash(cashLabel.Text)
+                    local Cash = parseCash(cashLabel.Text)
 
                     -- Buy upgrades if cash thresholds reached
-                    if cash >= 2460000 and not bought1 then
+                    if Cash >= 2460000 and not bought1 then
                         r.PurchaseClickUpgrade:FireServer("grandfathers_wisdom")
                         bought1 = true
                     end
 
-                    if cash >= 4288000 and not bought2 then
+                    if Cash >= 4288000 and not bought2 then
                         r.PurchaseClickUpgrade:FireServer("grandfathers_wisdom")
                         bought2 = true
                     end
 
-                    if cash >= 1470000000 and not bought3 then
+                    if Cash >= 1470000000 and not bought3 then
                         r.PurchaseClickUpgrade:FireServer("infinite_energy")
                         bought3 = true
                     end
 
-                    if cash >= 2793000000 and not bought4 then
+                    if Cash >= 2793000000 and not bought4 then
                         r.PurchaseClickUpgrade:FireServer("infinite_energy")
                         bought4 = true
                     end
 
-                    if cash >= 14700000000 and not bought5 then
+                    if Cash >= 14700000000 and not bought5 then
                         r.PurchaseClickUpgrade:FireServer("omnipotato_blessing")
                         bought5 = true
                     end
 
-                    if cash >= 28665000000 and not bought6 then
+                    if Cash >= 28665000000 and not bought6 then
                         r.PurchaseClickUpgrade:FireServer("omnipotato_blessing")
                         bought6 = true
                     end
