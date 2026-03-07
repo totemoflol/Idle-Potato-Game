@@ -407,7 +407,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
             while MicroMacroV1 do
                -- Prestige                  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformPrestige"):FireServer()
-                task.wait(1.9)
+                task.wait(2)
                   
                -- 245K Sell (1)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(245000)
