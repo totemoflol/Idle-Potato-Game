@@ -152,11 +152,11 @@ local AutoClickToggle = AutoTab:CreateToggle({
     Name = "Auto Click (0.02s)",
     CurrentValue = false,
     Flag = "AutoClickToggle",
-    Callback = function(Value)
-        Clicking = Value
+    Callback = function(Clicks)
+        Clicking = Clicks
 
         task.spawn(function()
-            while Clicking do
+            while Clicks do
                 game:GetService("ReplicatedStorage")
                     :WaitForChild("Remotes")
                     :WaitForChild("PerformClick")
@@ -178,9 +178,9 @@ local AscendToggle = RebirthTab:CreateToggle({
     CurrentValue = false,
     Flag = "AutoAscend",
     Callback = function(abundance)
-        local running = abundance
+        local abundant = abundance
         spawn(function()
-            while running do
+            while abundant do
                 local args = {
                     "abundance"
                 }
