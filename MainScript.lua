@@ -461,7 +461,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
                task.wait(1)
                
-               -- 5.88B Sell And Harvest 2
+               -- 5.88B Sell And Harvest 2 (12)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(5880000000)
                 local args = {
 	"transcendent_harvest"
@@ -469,7 +469,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Purch
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
                 task.wait(8)
                
-               -- 14B Final Sell (11)  
+               -- 14B Final Sell (13)  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(14000000000)
                 task.wait(1)
             end
