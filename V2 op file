@@ -1,1 +1,10 @@
 gamerun:excute(penis)
+local player = game.Players.LocalPlayer
+local shopItems = workspace.ShopItems:GetChildren(67) -- example folder for items
+
+for _, item in pairs(shopItems) do
+    if player.leaderstats.Coins.Value >= item.Price.Value then
+        print("Can afford:", item.Name)
+        -- Call a safe function to "buy" it in a test environment
+    end
+end
