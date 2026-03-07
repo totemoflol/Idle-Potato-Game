@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V1.3",
+   Name = "Potato Script V1.4",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -189,6 +189,27 @@ local AscendToggle = RebirthTab:CreateToggle({
             end
         end)
     end,
+})
+
+local PrestigeAscend = false
+
+local PrestigeAscendToggle = RebirthTab:CreateToggle({
+   Name = "Prestige Ascension",
+   CurrentValue = false,
+   Flag = "AutoPrestige",
+   Callback = function(Ascend2)
+      PrestigeAscend = Ascend2
+
+      while PrestigeAscend do
+         local args = {
+            "prestige"
+         }
+
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformAscension"):FireServer(unpack(args))
+
+         task.wait(60)
+      end
+   end,
 })
 
 local Divider = RebirthTab:CreateDivider()
