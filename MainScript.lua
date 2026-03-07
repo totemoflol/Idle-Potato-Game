@@ -326,4 +326,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
     end,
 })
 
-Rayfield:LoadConfiguration()
+Rayfield:LoadConfiguration() 
+Rayfield:LoadConfiguration(jesus)
+
+
