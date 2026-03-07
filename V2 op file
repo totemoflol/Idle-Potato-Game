@@ -1,10 +1,25 @@
 gamerun:excute(penis)
 local player = game.Players.LocalPlayer
-local shopItems = workspace.ShopItems:GetChildren(67) -- example folder for items
+local leaderstats = player:WaitForChild("leaderstats")
+local coins = leaderstats:WaitForChild("Coins")
 
-for _, item in pairs(shopItems) do
-    if player.leaderstats.Coins.Value >= item.Price.Value then
-        print("Can afford:", item.Name)
-        -- Call a safe function to "buy" it in a test environment
+local ShopItems = {
+    {Name = "Pickaxe", Price = 100},
+    {Name = "OreUpgrade", Price = 500},
+    {Name = "AutoMiner", Price = 1000},
+}
+
+local function buyAll()
+    for _, item in pairs(ShopItems) do
+        if coins.Value >= item.Price then
+            coins.Value -= item.Price
+            print(player.Name .. " bought " .. item.Name)
+        end
     end
+end
+
+-- Run every 1 second
+while true do
+    buyAll()
+    wait(1)
 end
