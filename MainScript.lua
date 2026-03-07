@@ -415,11 +415,11 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                   
                -- Wisdom 1 (2)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
-                task.wait(0.1)
+                task.wait(0.05)
                   
                -- 1M Sell (3)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(1000000)
-                task.wait(0.5)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(428700)
+                task.wait(0.05)
 
                -- Wisdom 2 (4)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
