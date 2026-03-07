@@ -387,7 +387,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                 task.wait(8)
 
                 -- 8B Final Sell (11)  
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(8_000_000_000)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(8000000000)
                 task.wait(1)
             end
         end)
