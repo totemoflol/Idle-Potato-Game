@@ -397,7 +397,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 local superhumanmacro = false
 
 local MacroV1Toggle = MacroTab:CreateToggle({
-    Name = "Macro V1",
+    Name = "SuperHumanMacro V1",
     CurrentValue = false,
     Flag = "SuperHumanMacroV1",
     Callback = function(MicroMacroV1)
@@ -410,7 +410,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                 task.wait(5)
                   
                -- 245K Sell (1)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(240000)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(245000)
                 task.wait(0.05)
                   
                -- Wisdom 1 (2)
