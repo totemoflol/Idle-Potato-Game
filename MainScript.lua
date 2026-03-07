@@ -467,7 +467,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Purch
 	"transcendent_harvest"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-                task.wait(8)
+                task.wait(15)
                
                -- 14B Final Sell (13)  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(14000000000)
