@@ -200,7 +200,7 @@ local PrestigeAscendToggle = RebirthTab:CreateToggle({
    Callback = function(Ascend2)
       PrestigeAscend = Ascend2
 
-      while PrestigeAscend do
+      while Ascend2 do
          local args = {
             "prestige"
          }
