@@ -221,8 +221,8 @@ local AutoPrestigeToggle = RebirthTab:CreateToggle({
     Name = "Auto Prestige (32s)",
     CurrentValue = false,
     Flag = "AutoPrestigeToggle",
-    Callback = function(Value)
-        Prestiging = Value
+    Callback = function(APrestige)
+        Prestiging = APrestige
 
         task.spawn(function()
             while Prestiging do
