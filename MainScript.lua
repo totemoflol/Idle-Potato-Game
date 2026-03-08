@@ -463,7 +463,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                -- 4B Sell And Omni 2 (10)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(4_000_000_000)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
-                task.wait(1.8)
+                task.wait(2)
                
                -- 8B Sell And Harvest 1 (11)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(8_000_000_000)
@@ -496,8 +496,8 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
 				task.wait(11)
                
-               -- 160B Final Sell (13)  
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(160_000_000_000)
+               -- 300B Final Sell (13)  
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(300_000_000_000)
                 task.wait(0.5)
             end
         end)
