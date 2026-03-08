@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V1.5",
+   Name = "Potato Script V1.51",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -257,7 +257,7 @@ else
 end
 
 --Macro Tab
-local MacroTab = Window:CreateTab("Macro", nil) -- Title, Image
+local MacroTab = Window:CreateTab("Macro", "bitcoin") -- Title, Image
 local Section = MacroTab:CreateSection("Prestige Macro 15-30")
 local macroing = false
 
@@ -423,10 +423,10 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 
                -- Wisdom 2 (4)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
-                task.wait(2.2)
+                task.wait(3)
 
-               -- 28M Sell (5)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(28000000)
+               -- 140M Sell (5)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(140000000)
                 task.wait(0.05)
 
                -- Energy 1 (6)
