@@ -219,11 +219,11 @@ local PrestigeAscend = false
 local PrestigeAscendToggle = RebirthTab:CreateToggle({
    Name = "Prestige Ascension",
    CurrentValue = false,
-   Flag = "AutoPrestige",
-   Callback = function(Ascend2)
-      PrestigeAscend = Ascend2
+   Flag = "PrestigeAscension",
+   Callback = function(PrestigeA)
+      PrestigeAscend = PrestigeA
 
-      while Ascend2 do
+      while PrestigeA do
          local args = {
             "prestige"
          }
