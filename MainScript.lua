@@ -3,7 +3,7 @@ print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V1.90",
+   Name = "Potato Script V1.91",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -506,3 +506,11 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 
 
 Rayfield:LoadConfiguration()
+
+-- Auto re-execute after teleport (like Infinite Yield)
+
+local queue = queue_on_teleport or queueteleport or (syn and syn.queue_on_teleport)
+
+if queue then
+    queue('loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/refs/heads/main/MainScript.lua"))()')
+end
