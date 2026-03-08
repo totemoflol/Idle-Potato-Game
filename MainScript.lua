@@ -261,8 +261,17 @@ end
 --Macro Tab
 local MacroTab = Window:CreateTab("Macro", "bitcoin") -- Title, Image
 local Section = MacroTab:CreateSection("Prestige Macro 15-30")
-local macroing = false
 
+local MPrestige = Remotes:WaitForChild("PerformPrestige"):FireServer()
+local MGoldenSell = Remotes:WaitForChild("SellGoldenPotatoes")
+local MWisdom = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
+local MEnergy = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
+local MOmni = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
+local MHarvest = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("transcendent_harvest")
+local MGalactic = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("galactic_harvest")
+
+
+local macroing = false
 local MacroV1Toggle = MacroTab:CreateToggle({
     Name = "Macro V1",
     CurrentValue = false,
