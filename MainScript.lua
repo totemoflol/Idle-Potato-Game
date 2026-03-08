@@ -459,7 +459,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 	            "transcendent_harvest"
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-                task.wait(4)
+                task.wait(3.6)
                
                -- 27.83B Sell And Harvest 2 (12)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(27_830_000_000)
@@ -467,7 +467,13 @@ local MacroV1Toggle = MacroTab:CreateToggle({
              	"transcendent_harvest"
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-                task.wait(15)
+                task.wait(0.05)
+
+			   -- Galactic 1
+				local args = {
+                "galactic_harvest"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
                
                -- 160B Final Sell (13)  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(160_000_000_000)
