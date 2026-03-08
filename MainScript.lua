@@ -482,7 +482,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                 "galactic_harvest"
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-				task.wait(1)
+				task.wait(11)
                
                -- 160B Final Sell (13)  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(160_000_000_000)
