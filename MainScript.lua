@@ -263,7 +263,7 @@ local MacroTab = Window:CreateTab("Macro", "bitcoin") -- Title, Image
 local Section = MacroTab:CreateSection("Prestige Macro 15-30")
 
 local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
-local MPrestige = Remotes:WaitForChild("PerformPrestige"):FireServer()
+local MPrestige = Remotes:WaitForChild("PerformPrestige")
 local MGoldenSell = Remotes:WaitForChild("SellGoldenPotatoes")
 local MWisdom = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
 local MEnergy = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
