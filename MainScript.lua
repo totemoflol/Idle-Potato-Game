@@ -1,3 +1,10 @@
+local CoreGui = game:GetService("CoreGui")
+
+local old = CoreGui:FindFirstChild("Rayfield")
+if old then
+    old:Destroy()
+end
+
 local s1 = Instance.new("Sound", workspace)
 s1.SoundId = "rbxassetid://5793681247"
 
