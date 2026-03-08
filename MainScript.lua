@@ -507,7 +507,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 				task.wait(2)
 
 			   -- 55.67B Sell And Galactic 2
-				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(55_670_000_000)
+				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(40_670_000_000)
 				local args = {
                 "galactic_harvest"
                 }
