@@ -441,27 +441,27 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                -- 300M Sell And Energy 3 (8)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(300000000)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
-                task.wait(1)
+                task.wait(2)
 
                -- 2.86B Sell And Omni 1 (9)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(2_870_000_000)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
                 task.wait(2)
                   
-               -- 1.8B Sell And Omni 2 (10)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(1800000000)
+               -- 4B Sell And Omni 2 (10)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(4000000000)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
                 task.wait(1)
                
-               -- 2.94B Sell And Harvest 1 (11)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(2940000000)
+               -- 29.4B Sell And Harvest 1 (11)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(29400000000)
                 local args = {
 	"transcendent_harvest"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
                 task.wait(1)
                
-               -- 5.88B Sell And Harvest 2 (12)
+               -- 25B Sell And Harvest 2 (12)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(5880000000)
                 local args = {
 	"transcendent_harvest"
