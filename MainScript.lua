@@ -451,7 +451,7 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                -- 4B Sell And Omni 2 (10)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(4000000000)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
-                task.wait(1)
+                task.wait(2)
                
                -- 29.4B Sell And Harvest 1 (11)
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(29400000000)
