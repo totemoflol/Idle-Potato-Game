@@ -1,9 +1,20 @@
-Version = "V1.90"
+local s1 = Instance.new("Sound", workspace)
+s1.SoundId = "rbxassetid://5793681247"
+
+local s2 = Instance.new("Sound", workspace)
+s2.SoundId = "rbxassetid://219332153"
+s2.Looped = true
+
+s1:Play()
+s1.Ended:Connect(function()
+    s2:Play()
+end)
+Version = "V2.0"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V1.91",
+   Name = "Potato Script V2.0",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -45,6 +56,7 @@ local SellTab = Window:CreateTab("Sell", 4483362458) -- Title, Image
 local Amount = 1
 local Delay = 1
 local Running = false
+local Label = SellTab:CreateLabel("Auto Sell", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 -- INPUT: Amount Of Gold Potatoes
 local AmountInput = SellTab:CreateInput({
    Name = "Amount Of Gold Potatoes",
@@ -148,6 +160,7 @@ end)
 
 -- Auto Tab
 local AutoTab = Window:CreateTab("Auto", "circuit-board") -- Title, Image
+local AutoClickLabel = AutoTab:CreateLabel("Auto Clicker", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 -- Auto Click
 local Clicking = false
 local AutoClickToggle = AutoTab:CreateToggle({
@@ -175,6 +188,7 @@ local AutoClickToggle = AutoTab:CreateToggle({
  -- Rebirth Tab    
 local RebirthTab = Window:CreateTab("Rebirths", "aperture") -- Title, Image
 local PrestigeSection = RebirthTab:CreateSection("Ascension")
+local AscendLabel = RebirthTab:CreateLabel("Ascension Upgrades", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 local AscendToggle = RebirthTab:CreateToggle({
     Name = "Abundance Ascension",
     CurrentValue = false,
@@ -216,6 +230,7 @@ local PrestigeAscendToggle = RebirthTab:CreateToggle({
 
 local Divider = RebirthTab:CreateDivider()
 local PrestigeSection = RebirthTab:CreateSection("Prestige")
+local PrestigeLabel = RebirthTab:CreateLabel("Auto Prestige", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 local Prestiging = false
 local AutoPrestigeToggle = RebirthTab:CreateToggle({
     Name = "Auto Prestige (32s)",
@@ -261,6 +276,7 @@ end
 --Macro Tab
 local MacroTab = Window:CreateTab("Macro", "bitcoin") -- Title, Image
 local Section = MacroTab:CreateSection("Prestige Macro 15-30")
+local StableMacroLabel = MacroTab:CreateLabel("Stable Macro", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
 local MPrestige = Remotes:WaitForChild("PerformPrestige")
@@ -406,8 +422,10 @@ local MacroV1Toggle = MacroTab:CreateToggle({
     end,
 })
 
-local superhumanmacro = false
+local SuperHumanMacroDivider = MacroTab:CreateDivider()
+local SuperHumanMacroLabel = MacroTab:CreateLabel("SuperHuman Macro", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
+local superhumanmacro = false
 local MacroV1Toggle = MacroTab:CreateToggle({
     Name = "SuperHumanMacro V1",
     CurrentValue = false,
