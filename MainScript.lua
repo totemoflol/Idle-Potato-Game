@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V1.77",
+   Name = "Potato Script V1.87",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -475,7 +475,14 @@ local MacroV1Toggle = MacroTab:CreateToggle({
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
 				task.wait(1)
-				
+
+			   -- 55.67B Sell And Galactic 2
+				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(55_670_000_000)
+				local args = {
+                "galactic_harvest"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
+				task.wait(1)
                
                -- 160B Final Sell (13)  
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(160_000_000_000)
