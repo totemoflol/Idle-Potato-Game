@@ -288,12 +288,11 @@ local StableMacroLabel = MacroTab:CreateLabel("Stable Macro", 4483362458, Color3
 local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
 local MPrestige = Remotes:WaitForChild("PerformPrestige")
 local MGoldenSell = Remotes:WaitForChild("SellGoldenPotatoes")
-local MWisdom = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
-local MEnergy = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
-local MOmni = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
-local MHarvest = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("transcendent_harvest")
-local MGalactic = Remotes:WaitForChild("PurchaseClickUpgrade"):FireServer("galactic_harvest")
-
+local MWisdom = Remotes:WaitForChild("PurchaseClickUpgrade")
+local MEnergy = Remotes:WaitForChild("PurchaseClickUpgrade")
+local MOmni = Remotes:WaitForChild("PurchaseClickUpgrade")
+local MHarvest = Remotes:WaitForChild("PurchaseClickUpgrade")
+local MGalactic = Remotes:WaitForChild("PurchaseClickUpgrade")
 
 local macroing = false
 local MacroV1Toggle = MacroTab:CreateToggle({
@@ -433,102 +432,89 @@ local SuperHumanMacroDivider = MacroTab:CreateDivider()
 local SuperHumanMacroLabel = MacroTab:CreateLabel("SuperHuman Macro", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 local superhumanmacro = false
+
+local SuperMacroV1 = {
+    {"prestige", nil, 2.6},
+
+    {"sell", 245000, 0.05},
+    {"wisdom", nil, 0.8},
+
+    {"sell", 428700, 0.05},
+    {"wisdom", nil, 2.9},
+
+    {"sell", 140000000, 0.05},
+    {"energy", nil, 0.3},
+
+    {"sell", 150000000, 0},
+    {"energy", nil, 0.6},
+
+    {"sell", 300000000, 0},
+    {"energy", nil, 2},
+
+    {"sell", 2870000000, 0},
+    {"omni", nil, 2},
+
+    {"sell", 4000000000, 0},
+    {"omni", nil, 2},
+
+    {"sell", 8000000000, 0},
+    {"harvest", nil, 3.6},
+
+    {"sell", 27830000000, 0},
+    {"harvest", nil, 0.05},
+
+    {"galactic", nil, 2},
+
+    {"sell", 40670000000, 0},
+    {"galactic", nil, 11},
+
+    {"sell", 300000000000, 0.5}
+}
+
 local MacroV1Toggle = MacroTab:CreateToggle({
     Name = "SuperHumanMacro V1",
     CurrentValue = false,
     Flag = "SuperHumanMacroV1",
-    Callback = function(MicroMacroV1)
-        superhumanmacro = MicroMacroV1
 
+    Callback = function(superhumanmacrov1)
+        superhumanmacro = superhumanmacrov1
         task.spawn(function()
-            while MicroMacroV1 do
-               -- Prestige                  
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformPrestige"):FireServer()
-                task.wait(2.6)
-                  
-               -- 245K Sell (1)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(245_000)
-                task.wait(0.05)
-                  
-               -- Wisdom 1 (2)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
-                task.wait(0.8)
-                  
-               -- 428.7K Sell (3)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(428_700)
-                task.wait(0.05)
+            while superhumanmacro do
 
-               -- Wisdom 2 (4)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
-                task.wait(2.9)
+                for _,step in ipairs(SuperMacroV1) do
+                    if not superhumanmacro then break end
 
-               -- 140M Sell (5)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(140_000_000)
-                task.wait(0.05)
+                    local action,value,delay = unpack(step)
 
-               -- Energy 1 (6)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
-                task.wait(0.3)
-                  
-               -- 150M Sell And Energy 2 (7)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(150_000_000)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
-                task.wait(0.6)
-               
-               -- 300M Sell And Energy 3 (8)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(300_000_000)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
-                task.wait(2)
+                    if action == "prestige" then
+                        MPrestige:FireServer()
 
-               -- 2.86B Sell And Omni 1 (9)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(2_870_000_000)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
-                task.wait(2)
-                  
-               -- 4B Sell And Omni 2 (10)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(4_000_000_000)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
-                task.wait(2)
-               
-               -- 8B Sell And Harvest 1 (11)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(8_000_000_000)
-                local args = {
-	            "transcendent_harvest"
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-                task.wait(3.6)
-               
-               -- 27.83B Sell And Harvest 2 (12)
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(27_830_000_000)
-                local args = {
-             	"transcendent_harvest"
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-                task.wait(0.05)
+                    elseif action == "sell" then
+                        MGoldenSell:FireServer(value)
 
-			   -- Galactic 1
-				local args = {
-                "galactic_harvest"
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-				task.wait(2)
+                    elseif action == "wisdom" then
+                        MWisdom:FireServer("grandfathers_wisdom")
 
-			   -- 55.67B Sell And Galactic 2
-				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(40_670_000_000)
-				local args = {
-                "galactic_harvest"
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer(unpack(args))
-				task.wait(11)
-               
-               -- 300B Final Sell (13)  
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(300_000_000_000)
-                task.wait(0.5)
+                    elseif action == "energy" then
+                        MEnergy:FireServer("infinite_energy")
+
+                    elseif action == "omni" then
+                        MOmni:FireServer("omnipotato_blessing")
+
+                    elseif action == "harvest" then
+                        MHarvest:FireServer("transcendent_harvest")
+
+                    elseif action == "galactic" then
+                        MGalactic:FireServer("galactic_harvest")
+                    end
+
+                    task.wait(delay)
+                end
+
             end
         end)
     end,
 })
-
 
 local MiscTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
 local Players = game:GetService("Players")
