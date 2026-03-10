@@ -528,16 +528,22 @@ local NoNotifToggle = MiscTab:CreateToggle({
    end,
 })
 
+local GeneratorFarm = false
+
 local GeneratorFarmToggle = MiscTab:CreateToggle({
    Name = "Auto Farm Generator",
    CurrentValue = false,
-   Flag = "GeneratorFarm", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(GeneratorFarm)
-	while GeneratorFarm do
-		local args = { "potato_seedling" } game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
-		task.wait(0.05)
-		local args = { "potato_seedling" } game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DeleteGenerator"):FireServer(unpack(args))
-		task.wait(0.05)
+   Flag = "GeneratorFarm",
+   Callback = function(Value)
+      GeneratorFarm = Value
+
+      task.spawn(function()
+         while GeneratorFarm do
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer("potato_seedling")
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DeleteGenerator"):FireServer("potato_seedling")
+            task.wait(0.05)
+         end
+      end)
    end,
 })
 
