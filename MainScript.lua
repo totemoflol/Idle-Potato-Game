@@ -1,5 +1,4 @@
 local CoreGui = game:GetService("CoreGui")
-
 local old = CoreGui:FindFirstChild("Rayfield")
 if old then
     old:Destroy()
@@ -7,6 +6,7 @@ end
 
 local s1 = Instance.new("Sound", workspace)
 s1.SoundId = "rbxassetid://5793681247"
+s1.Volume = 1
 
 local s2 = Instance.new("Sound", workspace)
 s2.SoundId = "rbxassetid://219332153"
@@ -16,12 +16,12 @@ s1:Play()
 s1.Ended:Connect(function()
     s2:Play()
 end)
-Version = "V2.13"
+Version = "V2.14"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V2.13",
+   Name = "Potato Script V2.14",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -436,39 +436,39 @@ local superhumanmacro = false
 local SuperMacroV1 = {
     {"prestige", nil, 2.6},
 
-    {"sell", 245000, 0.05},
+    {"sell", 1_000_000, 0.05},
     {"wisdom", nil, 0.8},
 
-    {"sell", 428700, 0.05},
-    {"wisdom", nil, 2.9},
+    {"sell", 428_700, 0.05},
+    {"wisdom", nil, 1.9},
 
-    {"sell", 140000000, 0.05},
+    {"sell", 140_000_000, 0.05},
     {"energy", nil, 0.3},
 
-    {"sell", 150000000, 0},
+    {"sell", 150_000_000, 0},
     {"energy", nil, 0.6},
 
-    {"sell", 300000000, 0},
-    {"energy", nil, 2},
+    {"sell", 300_000_000, 0},
+    {"energy", nil, 1},
 
-    {"sell", 2870000000, 0},
-    {"omni", nil, 2},
+    {"sell", 2_870_000_000, 0},
+    {"omni", nil, 1},
 
-    {"sell", 4000000000, 0},
-    {"omni", nil, 2},
+    {"sell", 4_000_000_000, 0},
+    {"omni", nil, 1},
 
-    {"sell", 8000000000, 0},
-    {"harvest", nil, 3.6},
+    {"sell", 8_000_000_000, 0},
+    {"harvest", nil, 0.6},
 
-    {"sell", 27830000000, 0},
+    {"sell", 27_830_000_000, 0},
     {"harvest", nil, 0.05},
 
-    {"galactic", nil, 2},
+    {"galactic", nil, 0.5},
 
-    {"sell", 40670000000, 0},
-    {"galactic", nil, 11},
+    {"sell", 40_670_000_000, 0},
+    {"galactic", nil, 20.5},
 
-    {"sell", 300000000000, 0.5}
+    {"sell", 900_000_000_000, 0.5}
 }
 
 local MacroV1Toggle = MacroTab:CreateToggle({
