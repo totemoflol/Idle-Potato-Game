@@ -547,7 +547,33 @@ local GeneratorFarmToggle = MiscTab:CreateToggle({
    end,
 })
 
+local ShopTab = Window:CreateTab("Shop", 4483362458) -- Title, Image
+local autobuy = false
+local Toggle = Tab:CreateToggle({
+   Name = "Production AutoBuy",
+   CurrentValue = false,
+   Flag = "ProductionAutoBuy",
+   Callback = function(ProductionPotion)
+      autobuy = ProductionPotion
 
+      task.spawn(function()
+         while autobuy do
+
+            local args = {
+               "potion_production"
+            }
+
+            game:GetService("ReplicatedStorage")
+               :WaitForChild("Remotes")
+               :WaitForChild("PurchaseShopPotato")
+               :FireServer(unpack(args))
+
+            task.wait(240) -- change speed if needed
+
+         end
+      end)
+   end,
+})
 
 
 
