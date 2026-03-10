@@ -549,7 +549,7 @@ local GeneratorFarmToggle = MiscTab:CreateToggle({
 
 local ShopTab = Window:CreateTab("Shop", 4483362458) -- Title, Image
 local autobuy = false
-local Toggle = Tab:CreateToggle({
+local ProductionAutoBuyToggle = ShopTab:CreateToggle({
    Name = "Production AutoBuy",
    CurrentValue = false,
    Flag = "ProductionAutoBuy",
