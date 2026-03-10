@@ -527,6 +527,23 @@ local NoNotifToggle = MiscTab:CreateToggle({
 			NotificationContainer.Visible = not DisableNotifications
    end,
 })
+
+local GeneratorFarmToggle = MiscTab:CreateToggle({
+   Name = "Auto Farm Generator",
+   CurrentValue = false,
+   Flag = "GeneratorFarm", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(GeneratorFarm)
+		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer("potato_seedling")
+		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DeleteGenerator"):FireServer("potato_seedling")
+   end,
+})
+
+
+
+
+
+
+
 Rayfield:LoadConfiguration()
 
 -- Auto re-execute after teleport (like Infinite Yield)
