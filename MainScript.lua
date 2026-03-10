@@ -530,6 +530,17 @@ local MacroV1Toggle = MacroTab:CreateToggle({
 })
 
 
+local MiscTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
+local Players = game:GetService("Players")
+local NotificationContainer = Players.LocalPlayer.PlayerGui:WaitForChild("PotatoGameGUI"):WaitForChild("NotificationContainer")
+local NoNotifToggle = MiscTab:CreateToggle({
+   Name = "Disable Notifications",
+   CurrentValue = false,
+   Flag = "DisableNotifications", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(DisableNotifications)
+			NotificationContainer.Visible = not DisableNotifications
+   end,
+})
 Rayfield:LoadConfiguration()
 
 -- Auto re-execute after teleport (like Infinite Yield)
