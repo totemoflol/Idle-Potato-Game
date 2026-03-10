@@ -468,7 +468,7 @@ local SuperMacroV1 = {
     {"sell", 40_670_000_000, 0},
     {"galactic", nil, 20.5},
 
-    {"sell", 900_000_000_000, 0.5}
+    {"sell", 3_000_000_000_000, 0.5}
 }
 
 local MacroV1Toggle = MacroTab:CreateToggle({
