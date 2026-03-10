@@ -16,12 +16,12 @@ s1:Play()
 s1.Ended:Connect(function()
     s2:Play()
 end)
-Version = "V2.10"
+Version = "V2.11"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V2.10",
+   Name = "Potato Script V2.11",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -533,9 +533,9 @@ local GeneratorFarmToggle = MiscTab:CreateToggle({
    CurrentValue = false,
    Flag = "GeneratorFarm", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(GeneratorFarm)
-		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer("potato_seedling")
+		local args = { "potato_seedling" } game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
 		task.wait(0.05)
-		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DeleteGenerator"):FireServer("potato_seedling")
+		local args = { "potato_seedling" } game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DeleteGenerator"):FireServer(unpack(args))
 		task.wait(0.05)
    end,
 })
