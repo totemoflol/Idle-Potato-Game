@@ -16,12 +16,12 @@ s1:Play()
 s1.Ended:Connect(function()
     s2:Play()
 end)
-Version = "V2.14"
+Version = "V2.15"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V2.14",
+   Name = "Potato Script V2.15",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
