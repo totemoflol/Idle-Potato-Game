@@ -565,7 +565,7 @@ local ProductionAutoBuyToggle = ShopTab:CreateToggle({
                :WaitForChild("Remotes")
                :WaitForChild("PurchaseShopPotato")
                :FireServer(unpack(args))
-            task.wait(240) -- change speed if needed
+            task.wait(60) -- change speed if needed
          end
       end)
    end,
