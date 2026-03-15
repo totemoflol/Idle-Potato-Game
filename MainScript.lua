@@ -16,12 +16,12 @@ s1:Play()
 s1.Ended:Connect(function()
     s2:Play()
 end)
-Version = "V2.27"
+Version = "V2.37"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V2.27",
+   Name = "Potato Script V2.37",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -594,7 +594,28 @@ local LuckAutoBuyToggle = ShopTab:CreateToggle({
    end,
 })
 
+local autobuygolden = false
+local GoldenAutoBuyToggle = ShopTab:CreateToggle({
+   Name = "GoldenAutoBuy",
+   CurrentValue = false,
+   Flag = "GoldenAutoBuy",
+   Callback = function(GoldenPotion)
+      AutoBuyGoldenPotion = GoldenPotion
+      task.spawn(function()
+         while AutoBuyGoldenPotion do
+            local args = {
+               "potion_golden"
+            }
 
+            game:GetService("ReplicatedStorage")
+               :WaitForChild("Remotes")
+               :WaitForChild("PurchaseShopPotato")
+               :FireServer(unpack(args))
+            task.wait(60) -- change speed if needed
+         end
+      end)
+   end,
+})
 
 
 Rayfield:LoadConfiguration()
