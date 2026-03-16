@@ -4,24 +4,30 @@ if old then
     old:Destroy()
 end
 
+local player = game:GetService("Players").LocalPlayer
+
+local ConfigName
+if player.UserId == 4874964037 then
+    ConfigName = "BJDHCMAINConfig"
+elseif player.UserId == 1242588417 then
+    ConfigName = "Durianlover9Config"
+elseif player.UserId == 3076753381 then
+	ConfigName = "aaaionj2Config"
+elseif player.UserId == 4993924900 then
+	ConfigName = "urmotherlah6Config"
+end
+
 local s1 = Instance.new("Sound", workspace)
 s1.SoundId = "rbxassetid://5793681247"
 s1.Volume = 1
-
-local s2 = Instance.new("Sound", workspace)
-s2.SoundId = "rbxassetid://219332153"
-s2.Looped = true
-
 s1:Play()
-s1.Ended:Connect(function()
-    s2:Play()
 end)
-Version = "V2.37"
+Version = "V2.67"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V2.37",
+   Name = "Potato Script V2.67",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
@@ -36,7 +42,7 @@ local Window = Rayfield:CreateWindow({
    ConfigurationSaving = {
       Enabled = true,
       FolderName = "Tato Script", -- Create a custom folder for your hub/game
-      FileName = "Tato Hub"
+      FileName = ConfigName
    },
 
    Discord = {
