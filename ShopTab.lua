@@ -1,4 +1,4 @@
-local ShopTab = Window:CreateTab("Shop", 4483362458) -- Title, Image
+local ShopTab = Window:CreateTab("Shop", "cake-slice") -- Title, Image
 local autobuy = false
 local ProductionAutoBuyToggle = ShopTab:CreateToggle({
    Name = "Production AutoBuy",
