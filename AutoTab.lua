@@ -22,3 +22,4 @@ local AutoClickToggle = AutoTab:CreateToggle({
         end)
     end,
 })
+print("Auto Tab Loaded")
