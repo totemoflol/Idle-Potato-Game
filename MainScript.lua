@@ -63,7 +63,7 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-
+getgenv().Window = Window
 
 
 
