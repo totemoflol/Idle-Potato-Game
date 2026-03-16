@@ -31,3 +31,4 @@ local GeneratorFarmToggle = MiscTab:CreateToggle({
       end)
    end,
 })
+print("Misc Tab Loaded")
