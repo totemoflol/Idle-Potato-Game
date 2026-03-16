@@ -65,15 +65,30 @@ local Window = Rayfield:CreateWindow({
 
 getgenv().Window = Window
 
+-- Sell Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/SellTab.lua"))()
+
+-- Auto Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/AutoTab.lua"))()
+
+-- Rebirth Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/RebirthTab.lua"))()
+
+-- Macro Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/MacroTab.lua"))()
+
+-- Misc Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/MiscTab.lua"))()
+
+-- Shop Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/ShopTab.lua"))()
 
 
 
 
 -- Anti-AFK (runs instantly when script runs)
-
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
-
 if getconnections then
     for _, connection in pairs(getconnections(player.Idled)) do
         if connection.Disable then
@@ -89,8 +104,6 @@ else
         game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
     end)
 end
-
-
 
 Rayfield:LoadConfiguration()
 
