@@ -41,6 +41,21 @@ local PrestigeAscendToggle = RebirthTab:CreateToggle({
    end,
 })
 
+local ThriftAscend = false
+local ThriftyAscendToggle = RebirthTab:CreateToggle({
+   Name = "Thrifty Ascension",
+   CurrentValue = false,
+   Flag = "ThriftyAscension",
+   Callback = function(ThriftyAscend)
+      ThriftAscend = ThriftyAscend
+      while ThriftAscend do
+         local args = {"prestige"}
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformAscension"):FireServer(unpack(args))
+         task.wait(60)
+      end
+   end,
+})
+
 local Divider = RebirthTab:CreateDivider()
 local PrestigeSection = RebirthTab:CreateSection("Prestige")
 local PrestigeLabel = RebirthTab:CreateLabel("Auto Prestige", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
