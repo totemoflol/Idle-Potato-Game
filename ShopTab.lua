@@ -67,3 +67,4 @@ local GoldenAutoBuyToggle = ShopTab:CreateToggle({
       end)
    end,
 })
+print("Shop Tab Loaded")
