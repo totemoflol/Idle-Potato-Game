@@ -265,7 +265,7 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
                -- Temporal Harvester 1
                 local args = {"temporal_harvester"}
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
-                task.wait(2)
+                task.wait(2.4)
 
                -- 100B Sell
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(100_000_000_000)
@@ -280,3 +280,4 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
         end)
     end,
 })
+print("Macro Tab Loaded")
