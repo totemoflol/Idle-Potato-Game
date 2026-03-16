@@ -522,6 +522,9 @@ local MacroV1Toggle = MacroTab:CreateToggle({
     end,
 })
 
+local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
+local PurchaseGenerator = Remotes:WaitForChild("PurchaseGenerator")
+
 local MiscTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
 local Players = game:GetService("Players")
 local NotificationContainer = Players.LocalPlayer.PlayerGui:WaitForChild("PotatoGameGUI"):WaitForChild("NotificationContainer")
@@ -540,8 +543,8 @@ local GeneratorFarmToggle = MiscTab:CreateToggle({
    Name = "Auto Farm Generator",
    CurrentValue = false,
    Flag = "GeneratorFarm",
-   Callback = function(Value)
-      GeneratorFarm = Value
+   Callback = function(GFarm)
+      GeneratorFarm = GFarm
 
       task.spawn(function()
          while GeneratorFarm do
