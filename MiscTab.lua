@@ -1,7 +1,7 @@
 local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
 local PurchaseGenerator = Remotes:WaitForChild("PurchaseGenerator")
 
-local MiscTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
+local MiscTab = Window:CreateTab("Misc", "app-window") -- Title, Image
 local Players = game:GetService("Players")
 local NotificationContainer = Players.LocalPlayer.PlayerGui:WaitForChild("PotatoGameGUI"):WaitForChild("NotificationContainer")
 local NoNotifToggle = MiscTab:CreateToggle({
