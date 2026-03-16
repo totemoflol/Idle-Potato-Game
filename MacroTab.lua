@@ -233,3 +233,70 @@ local MacroV1Toggle = MacroTab:CreateToggle({
         end)
     end,
 })
+
+local generatorfarm = false
+
+local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
+    Name = "KS Macro V1",
+    CurrentValue = false,
+    Flag = "GeneratorFarmV1",
+    Callback = function(GenFarmV1)
+        generatorfarmv1 = GenFarmV1
+
+        task.spawn(function()
+            while GenFarmV1 do
+               -- Prestige                  
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformPrestige"):FireServer()
+                task.wait(5)
+                  
+               -- 200K Sell (1)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(200000)
+                task.wait(0.5)
+                  
+               -- Wisdom 1 (2)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
+                task.wait(0.5)
+                  
+               -- 1M Sell (3)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(1000000)
+                task.wait(1)
+
+               -- Wisdom 2 (4)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("grandfathers_wisdom")
+                task.wait(2)
+
+               -- 28M Sell (5)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(28000000)
+                task.wait(1)
+
+               -- Energy 1 (6)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
+                task.wait(1)
+                  
+               -- 100M Sell And Energy 2 (7)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(100000000)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
+                task.wait(3)
+               
+               -- 300M Sell And Energy 3 (8)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(300000000)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("infinite_energy")
+                task.wait(3)
+
+               -- 1B Sell And Omni 1 (9)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(1000000000)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
+                task.wait(4)
+                  
+               -- 1.8B Sell And Omni 2 (10)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(1800000000)
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseClickUpgrade"):FireServer("omnipotato_blessing")
+                task.wait(8)
+
+                -- 8B Final Sell (11)  
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(8000000000)
+                task.wait(1)
+            end
+        end)
+    end,
+})
