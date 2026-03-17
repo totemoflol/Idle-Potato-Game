@@ -334,4 +334,4 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
         end)
     end,
 })
-print("Macro Tab Loaded V1.18")
+print("Macro Tab Loaded V1.19")
