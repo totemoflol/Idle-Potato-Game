@@ -319,8 +319,16 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
                -- Double Omni 2
                 local args = {"double_omnipotato"}
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
-                task.wait(100)
+                task.wait(2)
 
+               -- 8QA Sell
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(8_000_000_000_000_000)
+                task.wait(0.05)
+
+               -- Infinite Omni 1
+                local args = {"infinite_omnipotato"}
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
+                task.wait(100)
 
             end
         end)
