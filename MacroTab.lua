@@ -283,7 +283,7 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
                -- Potato Nexus 1
                 local args = {"potato_nexus"}
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
-                task.wait(3.4)
+                task.wait(3.6)
 
                -- 20T Sell
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(20_000_000_000_000)
@@ -304,4 +304,4 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
         end)
     end,
 })
-print("Macro Tab Loaded V1.09")
+print("Macro Tab Loaded V1.10")
