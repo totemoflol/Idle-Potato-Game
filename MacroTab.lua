@@ -234,8 +234,11 @@ local MacroV1Toggle = MacroTab:CreateToggle({
     end,
 })
 
-local generatorfarm = false
 
+local GeneratorFarmSection = MacroTab:CreateSection("Prestige Macro 15-30")
+local GeneratorMacroLabel = MacroTab:CreateLabel("Generator Macro", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local generatorfarm = false
 local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
     Name = "Generator Farm V1",
     CurrentValue = false,
@@ -344,4 +347,4 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
         end)
     end,
 })
-print("Macro Tab Loaded V1.27")
+print("Macro Tab Loaded V1.28")
