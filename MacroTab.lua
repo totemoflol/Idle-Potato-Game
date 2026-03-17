@@ -283,7 +283,7 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
                -- Potato Nexus 1
                 local args = {"potato_nexus"}
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
-                task.wait(3.6)
+                task.wait(3.4)
 
                -- 20T Sell
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(20_000_000_000_000)
@@ -301,7 +301,7 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
                -- Omni Potato 2
                 local args = {"omnipotato"}
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
-                task.wait(3.8)
+                task.wait(3.6)
 
                -- 300T Sell
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(300_000_000_000_000)
@@ -330,8 +330,8 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseGenerator"):FireServer(unpack(args))
                 task.wait(4)
 
-               -- 100QA Sell
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(100_000_000_000_000_000)
+               -- 80QA Sell
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellGoldenPotatoes"):FireServer(80_000_000_000_000_000)
                 task.wait(0.05)
 
                -- Infinite Universe 1
@@ -344,4 +344,4 @@ local GeneratorMacroV1Toggle = MacroTab:CreateToggle({
         end)
     end,
 })
-print("Macro Tab Loaded V1.22")
+print("Macro Tab Loaded V1.23")
