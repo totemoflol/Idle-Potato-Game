@@ -22,7 +22,7 @@ s1.SoundId = "rbxassetid://5793681247"
 s1.Volume = 1
 s1:Play()
 
-Version = "V3"
+Version = "V3.00"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
