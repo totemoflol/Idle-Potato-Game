@@ -79,4 +79,4 @@ local AutoPrestigeToggle = RebirthTab:CreateToggle({
         end)
     end,
 })
-print("Rebirth Tab Loaded")
+print("Rebirth Tab Loaded V1.01")
