@@ -49,7 +49,7 @@ local ThriftyAscendToggle = RebirthTab:CreateToggle({
    Callback = function(ThriftyAscend)
       ThriftAscend = ThriftyAscend
       while ThriftAscend do
-         local args = {"prestige"}
+         local args = {"thrifty"}
          game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PerformAscension"):FireServer(unpack(args))
          task.wait(60)
       end
