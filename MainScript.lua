@@ -22,12 +22,12 @@ s1.SoundId = "rbxassetid://5793681247"
 s1.Volume = 1
 s1:Play()
 
-Version = "V2.92"
+Version = "V3"
 print(Version)
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window
 local Window = Rayfield:CreateWindow({
-   Name = "Potato Script V2.92",
+   Name = "Potato Script V3",
    Icon = "venetian-mask", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Idle Potato Game (T)",
    LoadingSubtitle = "by Totemoflol",
