@@ -27,10 +27,7 @@ s2.Volume = 10
 s2.Looped = true
 
 s1:Play()
-
-s1.Ended:Connect(function()
-    s2:Play()
-end)
+s2:Play()
 
 Version = "V3.00"
 print(Version)
