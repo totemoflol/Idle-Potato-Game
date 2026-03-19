@@ -19,11 +19,11 @@ end
 
 local s1 = Instance.new("Sound", workspace)
 s1.SoundId = "rbxassetid://5793681247"
-s1.Volume = 10
+s1.Volume = 1
 
 local s2 = Instance.new("Sound", workspace)
 s2.SoundId = "rbxassetid://18967588612"
-s2.Volume = 10
+s2.Volume = 2
 s2.Looped = true
 
 s1:Play()
