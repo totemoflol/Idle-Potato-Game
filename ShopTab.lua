@@ -67,4 +67,26 @@ local GoldenAutoBuyToggle = ShopTab:CreateToggle({
       end)
    end,
 })
-print("Shop Tab Loaded")
+local autobuyclick = false
+local ClickAutoBuyToggle = ShopTab:CreateToggle({
+   Name = "Click AutoBuy",
+   CurrentValue = false,
+   Flag = "ClickAutoBuy",
+   Callback = function(ClickPotion)
+      AutoBuyClickPotion = ClickPotion
+      task.spawn(function()
+         while AutoBuyClickPotion do
+            local args = {
+               "potion_click"
+            }
+
+            game:GetService("ReplicatedStorage")
+               :WaitForChild("Remotes")
+               :WaitForChild("PurchaseShopPotato")
+               :FireServer(unpack(args))
+            task.wait(60) -- change speed if needed
+         end
+      end)
+   end,
+})
+print("Shop Tab Loaded V1.10")
