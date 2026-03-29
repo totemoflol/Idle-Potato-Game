@@ -7,5 +7,5 @@ local DiamondRank = {
 
 local EmeraldRank = {
     [3076753381] = true, -- aaaionj2
-    [] = true  -- urmotherlah6
+    [4993924900] = true  -- urmotherlah6
 }
