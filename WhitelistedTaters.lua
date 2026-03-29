@@ -9,3 +9,6 @@ local EmeraldRank = {
     [3076753381] = true, -- aaaionj2
     [4993924900] = true  -- urmotherlah6
 }
+
+local GoldRank = {
+}
