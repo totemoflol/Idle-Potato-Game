@@ -1,4 +1,4 @@
-local mode = "DiamondTaters" -- DiamondTaters, EmeraldTaters, GoldTaters
+local mode = "DiamondTaters" -- Owner, Devs, Premium
 
 local DiamondRank = {
     [4874964037] = true, -- bjdhcmain
@@ -12,3 +12,28 @@ local EmeraldRank = {
 
 local GoldRank = {
 }
+
+
+local whitelist = {}
+local function addRank(rankTable)
+    for id, _ in pairs(rankTable) do
+        whitelist[id] = true
+    end
+end
+
+-- always include diamond
+addRank(DiamondRank)
+
+-- add based on mode
+if mode == "Owner" then
+
+elseif mode == "Devs" then
+    addRank(EmeraldRank)
+
+elseif mode == "Premium" then
+    addRank(EmeraldRank)
+    addRank(GoldRank)
+end
+
+-- set global
+getgenv().whitelistedtaters = whitelist
