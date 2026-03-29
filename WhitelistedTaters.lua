@@ -1,4 +1,4 @@
-local mode = "DiamondTaters" -- Owner, Devs, Premium
+local mode = "Owner" -- Owner, Devs, Premium
 
 local DiamondRank = {
     [4874964037] = true, -- bjdhcmain
