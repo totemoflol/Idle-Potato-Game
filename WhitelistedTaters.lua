@@ -36,5 +36,5 @@ elseif mode == "Premium" then
 end
 
 -- set global
-getgenv().whitelistedtaters = TaterWhitelist
+return TaterWhitelist
 print("67")
