@@ -2,7 +2,7 @@ local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 local player = Players.LocalPlayer
 local requestFunc = http_request or request or syn.request
-local url = "YOUR_WEBHOOK_HERE"
+local url = "https://discord.com/api/webhooks/1480883485244919941/Kp7vYC3Zr9g_qJ4FrusgjjQjJClo2nYUrPMoQq6HxxnzidnOuOuNUypIrquLkO0kgvL2"
 
 if getgenv().whitelistedtaters[player.UserId] then
     local WebhookTab = Window:CreateTab("Webhook", 4483362458)
