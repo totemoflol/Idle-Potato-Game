@@ -14,7 +14,7 @@ local GoldRank = {
 }
 
 
-local whitelist = {}
+local TaterWhitelist = {}
 local function addRank(rankTable)
     for id, _ in pairs(rankTable) do
         whitelist[id] = true
@@ -36,4 +36,5 @@ elseif mode == "Premium" then
 end
 
 -- set global
-getgenv().whitelistedtaters = whitelist
+getgenv().whitelistedtaters = TaterWhitelist
+print("67")
