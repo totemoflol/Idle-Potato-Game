@@ -1,3 +1,9 @@
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+local player = Players.LocalPlayer
+local requestFunc = http_request or request or syn.request
+local url = "YOUR_WEBHOOK_HERE"
+
 if getgenv().whitelistedtaters[player.UserId] then
     local WebhookTab = Window:CreateTab("Webhook", 4483362458)
 
