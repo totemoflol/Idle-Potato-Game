@@ -1,5 +1,5 @@
 local PremiumTab = Window:CreateTab("Premium", "gem") -- Title, Image
-local AdminFeaturesLabel = PremiumTab:CreateLabel("Premium", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local PremiumFeaturesLabel = PremiumTab:CreateLabel("Premium", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 local player = game:GetService("Players").LocalPlayer
 local AllowedTaters = getgenv().whitelistedtaters or {}
