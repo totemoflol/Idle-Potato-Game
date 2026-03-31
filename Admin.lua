@@ -1,7 +1,7 @@
 local player = game:GetService("Players").LocalPlayer
-local TaterTots = getgenv().whitelistedtaters or {}
+local Whitelist = getgenv().whitelistedtaters or {}
 
-if TaterTots[player.UserId] then
+if Whitelist[player.UserId] then
     local PremiumTab = Window:CreateTab("Premium", "gem")
 
     local PremiumFeaturesLabel = PremiumTab:CreateLabel(
