@@ -15,6 +15,8 @@ elseif player.UserId == 3076753381 then
 	ConfigName = "aaaionj2Config"
 elseif player.UserId == 4993924900 then
 	ConfigName = "urmotherlah6Config"
+else
+    ConfigName = "Tato Hub"
 end
 
 local s1 = Instance.new("Sound", workspace)
@@ -72,6 +74,9 @@ local Window = Rayfield:CreateWindow({
 
 getgenv().Window = Window
 
+-- Whitelist
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/refs/heads/main/WhitelistedTaters.lua"))()
+
 -- Sell Tab
 loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/SellTab.lua"))()
 
@@ -90,8 +95,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potat
 -- Shop Tab
 loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/main/ShopTab.lua"))()
 
+-- Premium Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/refs/heads/main/Admin.lua"))()
 
-
+-- Webhook Tab
+loadstring(game:HttpGet("https://raw.githubusercontent.com/totemoflol/Idle-Potato-Game/refs/heads/main/Webhook.lua"))()
 
 -- Anti-AFK (runs instantly when script runs)
 local Players = game:GetService("Players")
